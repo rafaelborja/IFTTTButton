@@ -14,7 +14,7 @@
  *  Date: 2013-05-01
  */
 metadata {
-	definition (name: "IFTTT Virtual Button", namespace: "smartthings", author: "SmartThings") {
+	definition (name: "IFTTT Virtual Button", namespace: "smartthings", author: "Rafael Borja") {
 		capability "Actuator"
 		capability "Switch"
 		capability "Momentary"
@@ -41,18 +41,18 @@ def parse(String description) {
 }
 
 def push() {
-	log.debug "PUSH"
+	log.debug "IFTTT Virual Button PUSH"
 	sendEvent(name: "switch", value: "on", isStateChange: true, display: false)
 	sendEvent(name: "switch", value: "off", isStateChange: true, display: false)
 	sendEvent(name: "momentary", value: "pushed", isStateChange: true)
 }
 
 def on() {
-	log.debug "ON"
+	log.debug "IFTTT Virual Button ON"
 	push()
 }
 
 def off() {
-	log.debug "OFF"
+	log.debug "IFTTT Virual Button OFF"
 	push()
 }
